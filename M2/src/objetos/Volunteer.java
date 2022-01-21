@@ -34,6 +34,10 @@ public class Volunteer extends Trabajador {
 	public double getSueldo() {
 		return this.prestacio;
 	}
+	
+	public double getPrestacion() {
+		return this.prestacio;
+	}
 
 	
 	private void setSueldo() {
