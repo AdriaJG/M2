@@ -1,7 +1,8 @@
-import Objetos.*;
+import clases.ExcepcionSueldo;
+import objetos.*;
 public class M2APP {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws ExcepcionSueldo {
 		// TODO Auto-generated method stub
 		double sueldo = 100;
 		Manager m = new Manager(sueldo);
