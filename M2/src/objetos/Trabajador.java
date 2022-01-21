@@ -4,6 +4,7 @@ import clases.*;
 public abstract class Trabajador {
 	protected String nombre;
 	protected double sueldo;
+	protected boolean bono = false;
 	
 	public Trabajador(String nombre, double sueldo, double[] validador) throws ExcepcionSueldo {
 		super();
@@ -53,11 +54,20 @@ public abstract class Trabajador {
 	}
 	
 	public double getAnualBruto() {
-		return this.sueldo * 12;
+		if (this.bono) {
+			return (this.sueldo + getMensualNeto(10)) * 12;
+		} else {
+			return this.sueldo * 12;
+		}
+		
 	}
 	
 	public double getAnualNeto(int porcentaje) {
-		return getMensualNeto(porcentaje);
+		//return getMensualNeto(porcentaje) * 12;
+		return getAnualBruto() - (getAnualBruto() * porcentaje / 100);
 	}
 	
+	public void asignarBono(boolean bono) {
+		this.bono = bono;
+	}
 }
