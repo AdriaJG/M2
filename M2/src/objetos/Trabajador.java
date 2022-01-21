@@ -44,4 +44,20 @@ public abstract class Trabajador {
 		}
 	}
 	
+	public double getMensualBruto() {
+		return this.sueldo;
+	}
+	
+	public double getMensualNeto(int porcentaje) {
+		return this.sueldo + this.sueldo * porcentaje / 100;
+	}
+	
+	public double getAnualBruto() {
+		return this.sueldo * 12;
+	}
+	
+	public double getAnualNeto(int porcentaje) {
+		return getMensualNeto(porcentaje);
+	}
+	
 }
